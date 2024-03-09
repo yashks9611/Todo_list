@@ -3,27 +3,27 @@
 This project provides a RESTful API for creating and managing to-do lists and their task.
 
 ## Table of Contents
-<!-- TOC -->
-* [To-do Task List  API](#to-do-task-list--api)
-  * [Table of Contents](#table-of-contents)
-  * [Introduction](#introduction)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [Endpoints](#endpoints)
-    * [Create a To-do list](#create-a-to-do-list)
-    * [Get all To-do list](#get-all-to-do-list)
-    * [Delete a To-do list](#delete-a-to-do-list)
-    * [Update a To-do list](#update-a-to-do-list)
-    * [Create a Task](#create-a-task)
-    * [Get all tasks in a list](#get-all-tasks-in-a-list)
-    * [Delete a task in a list](#delete-a-task-in-a-list)
-    * [Update a task in a  list](#update-a-task-in-a--list)
-    * [Complete a task in a list](#complete-a-task-in-a-list)
-    * [Change the priority a task in a list](#change-the-priority-a-task-in-a-list)
-  * [Contributing](#contributing)
-  * [License](#license)
-<!-- TOC -->
+
+- [To-do Task List  API](#to-do-task-list--api)
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Endpoints](#endpoints)
+    -   [Create a To-do list](#create-a-to-do-list)
+    -   [Get all To-do list](#get-all-to-do-list)
+    -   [Delete a To-do list](#delete-a-to-do-list)
+    -   [Update a To-do list](#update-a-to-do-list)
+    -   [Create a Task](#create-a-task)
+    -   [Get all tasks in a list](#get-all-tasks-in-a-list)
+    -   [Delete a task in a list](#delete-a-task-in-a-list)
+    -   [Update a task in a  list](#update-a-task-in-a--list)
+    -   [Complete a task in a list](#complete-a-task-in-a-list)
+    -   [Change the priority a task in a list](#change-the-priority-a-task-in-a-list)
+- [Contributing](#contributing)
+- [License](#license)
+
 
 ## Introduction
 
@@ -66,6 +66,7 @@ Create a new to-do list.
     "title" : "List 1",
     "description" : "Daily Task List"
   }
+  ```
 - **Response Body:**
   ```json
   {
@@ -73,7 +74,7 @@ Create a new to-do list.
     "title": "List 1",
     "description": "Daily Task List"
   }
-
+  ```
 ### Get all To-do list
 
 Retrieve all to-do list.
@@ -101,6 +102,7 @@ Retrieve all to-do list.
       "description": "House-work more"
     }
   ]
+  ```
 
 ### Delete a To-do list
 
@@ -109,7 +111,7 @@ Delete a to-do list by its ID.
 - **Endpoint:** `/todo/deleteList/{id}`
 - **HTTP Method:** `DELETE`
 - **Parameter:**
-  - `id` *(path parameter)*: ID of the To-do list to delete.
+    - `id` *(path parameter)*: ID of the To-do list to delete.
 - **Request Body:**
   None
 - **Sample Request URL:** `localhost:8080/todo/deleteList/1`
@@ -120,7 +122,8 @@ Delete a to-do list by its ID.
     "title": "List 1",
     "description": "Daily Task List"	
   }
-
+  ```
+  
 ### Update a To-do list
 
 Update a to-do list by its ID.
@@ -134,6 +137,7 @@ Update a to-do list by its ID.
     "title" : "List 1",
     "description" : "Daily Workout Task List"
   }
+  ```
 - **Response Body:**
   ```json
   {
@@ -141,7 +145,8 @@ Update a to-do list by its ID.
     "title": "List 1",
     "description": "Daily Workout Task List"
   }
-
+  ```
+  
 ### Create a Task
 
 Create a new task in a list.
@@ -152,10 +157,11 @@ Create a new task in a list.
   ```json
   {
     "title": "Task 1",
-    "description": "Buy milk"	
+    "description": "Buy milk",	
     "priority": 1,
     "listId": 1
-}
+  }
+  ```
 - **Response Body:**
   ```json
   {	
@@ -166,7 +172,8 @@ Create a new task in a list.
     "isComplete": false,	
     "listId": 1
   }
-
+  ```
+  
 ### Get all tasks in a list
 
 Get all tasks in a to-do list by the ID of the to-do list.
@@ -174,7 +181,7 @@ Get all tasks in a to-do list by the ID of the to-do list.
 - **Endpoint:** `/task/getTasks`
 - **HTTP Method:** `GET`
 - **Parameter:**
-  - `listId` (query parameter): ID of the list to retrieve tasks from. 
+    - `listId` *(query parameter)*: ID of the list to retrieve tasks from. 
 - **Request Body:**
   None
 - **Sample Request URL:** `localhost:8080/task/getTasks?listId=1` 
@@ -198,6 +205,7 @@ Get all tasks in a to-do list by the ID of the to-do list.
       "listId": 1
     }
   ]
+  ```
 
 ### Delete a task in a list
 
@@ -206,7 +214,7 @@ Delete a task in a list by its ID.
 - **Endpoint:** `/task/deleteTask/{id}`
 - **HTTP Method:** `DELETE`
 - **Parameter:**
-  - `id` *(path parameter)*: ID of the task to delete.
+    - `id` *(path parameter)*: ID of the task to delete.
 - **Request Body:**
   None
 - **Sample Request URL:** `localhost:8080/task/deleteTask/2`
@@ -220,6 +228,7 @@ Delete a task in a list by its ID.
     "isComplete": false,
     "listId": 1
   }
+  ```
 
 ### Update a task in a  list
 
@@ -236,6 +245,7 @@ Update a task in a list by its ID.
     "priority": 2,
     "listId": 4
   }
+  ```
 - **Response Body:**
   ```json
   {
@@ -246,6 +256,7 @@ Update a task in a list by its ID.
     "isComplete": false,
     "listId": 4
   }
+  ```
 
 ### Complete a task in a list
 
@@ -254,7 +265,7 @@ Complete a task in a list by its ID.
 - **Endpoint:** `/task/completeTask/{id}`
 - **HTTP Method:** `PUT`
 - **Parameter:**
-  - `id` *(path parameter)*: ID of the task to complete.
+    - `id` *(path parameter)*: ID of the task to complete.
 - **Request Body:**
   None
 - **Sample Request URL:** `localhost:8080/task/completeTask/1`
@@ -268,8 +279,8 @@ Change the priority a task in a list by its ID.
 - **Endpoint:** `/task/changePriority/{id}`
 - **HTTP Method:** `PUT`
 - **Parameter:**
-  - `id` *(path parameter)*: ID of the task whose priority is to be changed.
-  - `priority` (query parameter): New priority value to assign to the task.
+    - `id` *(path parameter)*: ID of the task whose priority is to be changed.
+    - `priority` *(query parameter)*: New priority value to assign to the task.
 - **Request Body:**
   None
 - **Sample Request URL:** `localhost:8080/task/changePriority/1?priority=2`
@@ -283,6 +294,7 @@ Change the priority a task in a list by its ID.
     "isComplete": false,
     "listId": 1
   }
+  ```
 
 ## Contributing
 
